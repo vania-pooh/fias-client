@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Буравцев_А (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<xs:element name="IntervalStatuses">
+		<xs:annotation>
+			<xs:documentation>Состав и структура файла с информацией по статусу интервалов домов в БД ФИАС</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="IntervalStatus" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Статус интервала домов</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="INTVSTATID" use="required">
+							<xs:annotation>
+								<xs:documentation>Идентификатор статуса (обычный, четный, нечетный)</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:totalDigits value="10"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="NAME" use="required">
+							<xs:annotation>
+								<xs:documentation>Наименование</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="60"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

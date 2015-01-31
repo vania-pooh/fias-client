@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Буравцев_А (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+	<xs:element name="Landmarks">
+		<xs:annotation>
+			<xs:documentation>Состав и структура файла с информацией по описанию мест расположения  имущественных объектов в БД ФИАС</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Landmark" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Описание мест расположения  имущественных объектов</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="LOCATION" use="required">
+							<xs:annotation>
+								<xs:documentation>Месторасположение ориентира</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+									<xs:maxLength value="500"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="POSTALCODE" use="optional">
+							<xs:annotation>
+								<xs:documentation>Почтовый индекс</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="6"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="IFNSFL" use="optional">
+							<xs:annotation>
+								<xs:documentation>Код ИФНС ФЛ</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="4"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="TERRIFNSFL" use="optional">
+							<xs:annotation>
+								<xs:documentation>Код территориального участка ИФНС ФЛ</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="4"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="IFNSUL" use="optional">
+							<xs:annotation>
+								<xs:documentation>Код ИФНС ЮЛ</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="4"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="TERRIFNSUL" use="optional">
+							<xs:annotation>
+								<xs:documentation>Код территориального участка ИФНС ЮЛ</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="4"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="OKATO" use="optional">
+							<xs:annotation>
+								<xs:documentation>OKATO</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="11"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="OKTMO" use="optional">
+							<xs:annotation>
+								<xs:documentation>OKTMO</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="8"/>
+									<xs:maxLength value="11"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="UPDATEDATE" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Дата  внесения записи</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="LANDID" use="required">
+							<xs:annotation>
+								<xs:documentation>Уникальный идентификатор записи ориентира</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="36"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="LANDGUID" use="required">
+							<xs:annotation>
+								<xs:documentation>Глобальный уникальный идентификатор ориентира</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="36"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="AOGUID" use="required">
+							<xs:annotation>
+								<xs:documentation>Уникальный идентификатор родительского объекта (улицы, города, населенного пункта и т.п.)</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="36"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="STARTDATE" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Начало действия записи</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="ENDDATE" type="xs:date" use="required">
+							<xs:annotation>
+								<xs:documentation>Окончание действия записи</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="NORMDOC" use="optional">
+							<xs:annotation>
+								<xs:documentation>Внешний ключ на нормативный документ</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="36"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
