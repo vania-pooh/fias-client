@@ -68,11 +68,11 @@ public final class Fias {
         );
     }
 
-    private List<AddressObjects.Object> loadByAddressLevel(AddressLevel addressLevel) {
+    public List<AddressObjects.Object> loadByAddressLevel(AddressLevel addressLevel) {
         return fiasAware.load(getPredicateByAddressLevelAndParentCode(addressLevel, null));
     }
     
-    private List<AddressObjects.Object> loadByAddressLevelAndParentCode(AddressLevel addressLevel, String parentCode) {
+    public List<AddressObjects.Object> loadByAddressLevelAndParentCode(AddressLevel addressLevel, String parentCode) {
         return fiasAware.load(getPredicateByAddressLevelAndParentCode(addressLevel, parentCode));
     }
     
