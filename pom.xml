@@ -8,10 +8,19 @@
     <artifactId>fias-client</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <name>FIAS Client</name>
+    <description>Java client for FNS FIAS database.</description>
+
     <properties>
         <compiler.version>1.8</compiler.version>
     </properties>
-    
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>9</version>
+    </parent>
+
     <dependencies>
         <dependency>
             <groupId>org.jvnet.jaxb2_commons</groupId>
@@ -86,4 +95,37 @@
         </plugins>
     </build>
 
+    <organization>
+        <name>Meridor</name>
+        <url>http://meridor.org/</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/meridor/fias-client</url>
+        <connection>scm:git@github.com:meridor/fias-client.git</connection>
+        <developerConnection>scm:git:git@github.com:meridor/fias-client.git</developerConnection>
+    </scm>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/meridor/fias-client/issues</url>
+    </issueManagement>
+    <ciManagement>
+        <system>Travis</system>
+        <url>https://travis-ci.org/meridor/fias-client</url>
+    </ciManagement>
+    <developers>
+        <developer>
+            <id>vania-pooh</id>
+            <name>Ivan Krutov</name>
+            <email>support@meridor.org</email>
+            <organization>Meridor</organization>
+        </developer>
+    </developers>
+    
 </project>
