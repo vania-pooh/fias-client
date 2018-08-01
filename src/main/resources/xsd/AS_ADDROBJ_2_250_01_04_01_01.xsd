@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSpy v2009 sp1 (http://www.altova.com) by Буравцев_А (EMBRACE) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
-           attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sch="http://purl.oclc.org/dsdl/schematron" xmlns:usch="http://www.unisoftware.ru/schematron-extensions" xmlns:sql="urn:schemas-microsoft-com:mapping-schema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:element name="AddressObjects">
 		<xs:annotation>
 			<xs:documentation>Состав и структура файла с информацией классификатора адресообразующих элементов БД ФИАС</xs:documentation>
@@ -94,6 +93,16 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>
+						<xs:attribute name="PLANCODE" use="required">
+							<xs:annotation>
+								<xs:documentation>Код элемента планировочной структуры</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="4"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>									
 						<xs:attribute name="STREETCODE" use="optional">
 							<xs:annotation>
 								<xs:documentation>Код улицы</xs:documentation>
@@ -383,6 +392,23 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:attribute>
+            <xs:attribute name="DIVTYPE" use="required">
+              <xs:annotation>
+                <xs:documentation>
+                  Тип адресации:
+                  0 - не определено
+                  1 - муниципальный;
+                  2 - административно-территориальный
+                </xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:int">
+                  <xs:enumeration value="0"/>
+                  <xs:enumeration value="1"/>
+                  <xs:enumeration value="2"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
